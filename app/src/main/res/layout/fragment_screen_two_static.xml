@@ -30,12 +30,12 @@
                     android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:itemCount="3"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/list_item_image_gallery" />
 
 
@@ -73,14 +73,14 @@
 
                     <me.relex.circleindicator.CircleIndicator2
                         android:id="@+id/indicator"
-                        android:layout_marginBottom="30dp"
                         android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="30dp"
                         app:ci_gravity="center"
                         app:ci_orientation="horizontal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:layout_height="48dp"/>
+                        app:layout_constraintStart_toStartOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -214,10 +214,11 @@
                             android:id="@+id/tv_start_after"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajawal_medium"
                             android:text="@string/mazad_start_after"
                             android:textColor="#808080"
-                            android:textSize="12sp"
 
+                            android:textSize="12sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -226,10 +227,11 @@
                             android:id="@+id/tv_start_mins"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajawal_bold"
                             android:text="@string/_31_22_55"
                             android:textColor="#FDBC01"
                             android:textSize="18sp"
-                            android:textStyle="bold"
+
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/tv_start_after" />
@@ -237,6 +239,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajawal_medium"
                             android:text="@string/min_hour_day"
                             android:textColor="#FDBC01"
                             android:textSize="12sp"
@@ -261,7 +264,9 @@
                             android:id="@+id/tv_start_with_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajawal_medium"
                             android:text="@string/with_date"
+
                             android:textSize="12sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -271,10 +276,11 @@
                             android:id="@+id/tv_date_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajawal_bold"
                             android:text="@string/_26_11_2022"
                             android:textColor="#44215D"
+
                             android:textSize="18sp"
-                            android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/tv_start_with_date" />
@@ -282,9 +288,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajawal_medium"
                             android:text="@string/_13_59_00"
                             android:textColor="#44215D"
                             android:textSize="12sp"
+
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/tv_date_time" />
@@ -314,8 +322,7 @@
                         android:text="@string/mazad_name"
                         android:textColor="@color/black"
                         android:textSize="20sp"
-
-                        android:textStyle="bold"
+                        android:fontFamily="@font/tajawal_bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -325,10 +332,10 @@
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/baseline_keyboard_arrow_left_24"
                         android:drawableTint="#D20653"
-                        android:text="@string/mazad_details"
+                        android:text="@string/mazad_details"                        android:fontFamily="@font/tajawal_bold"
+
                         android:textColor="#E91E63"
                         android:textSize="15sp"
-                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -338,7 +345,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/code_1234"
-                        android:textColor="#808080"
+                        android:textColor="#808080"                        android:fontFamily="@font/tajawal_medium"
+
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/mazad_name" />
@@ -358,9 +366,9 @@
                         android:drawableStart="@drawable/baseline_keyboard_arrow_left_24"
                         android:drawableTint="#D20653"
                         android:text="@string/mazad_raring"
-                        android:textColor="#E91E63"
+                        android:textColor="#E91E63"                        android:fontFamily="@font/tajawal_bold"
+
                         android:textSize="15sp"
-                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -397,7 +405,7 @@
                         android:text="@string/immediate_buy_price"
                         android:textColor="@color/black"
                         android:textSize="14sp"
-                        android:textStyle="bold"
+                        android:fontFamily="@font/tajawal_bold"
 
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -409,8 +417,8 @@
                         android:text="@string/_200"
                         android:textColor="@color/black"
                         android:textSize="20sp"
+                        android:fontFamily="@font/tajawal_bold"
 
-                        android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_immdeiate" />
 
@@ -430,9 +438,10 @@
                             android:background="@drawable/bg_buy_now"
                             android:padding="15dp"
                             android:text="@string/buy_now"
+                            android:fontFamily="@font/tajawal_bold"
+
                             android:textColor="@color/white"
                             android:textSize="14sp"
-                            android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@id/btn_back" />
 
@@ -444,10 +453,10 @@
                             android:background="@drawable/bg_buy_get_back_btn"
                             android:padding="15dp"
                             android:text="@string/get_back"
+                            android:fontFamily="@font/tajawal_bold"
 
                             android:textColor="#E91E63"
                             android:textSize="14sp"
-                            android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -477,7 +486,8 @@
                         android:text="@string/the_bidders"
                         android:textColor="@color/black"
                         android:textSize="16sp"
-                        android:textStyle="bold"
+                        android:fontFamily="@font/tajawal_medium"
+
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/bidders"
@@ -490,8 +500,9 @@
                         android:drawableTint="#D20653"
                         android:text="@string/show_more"
                         android:textColor="#E91E63"
+                        android:fontFamily="@font/tajawal_bold"
+
                         android:textSize="14sp"
-                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -533,8 +544,9 @@
                     android:padding="5dp"
                     android:text="@string/the_seller"
                     android:textColor="@color/black"
+                    android:fontFamily="@font/tajawal_medium"
+
                     android:textSize="16sp"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@id/image_seller"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -559,7 +571,8 @@
                     android:text="@string/bidder_name"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/tajawal_bold"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/profile_image"
                     app:layout_constraintTop_toTopOf="@id/profile_image" />
@@ -572,19 +585,20 @@
                     android:text="@string/_13_59_00"
                     android:textColor="@color/black"
                     android:textSize="12sp"
+                    android:fontFamily="@font/tajawal_medium"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/profile_image"
                     app:layout_constraintTop_toBottomOf="@id/persone_name" />
 
                 <include
+                    android:id="@+id/rating"
+                    layout="@layout/item_simple_rating_bar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rating"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/profile_image"
-                    app:layout_constraintTop_toBottomOf="@id/time"
-                    layout="@layout/item_simple_rating_bar" />
+                    app:layout_constraintTop_toBottomOf="@id/time" />
 
 
                 <TextView
@@ -593,7 +607,8 @@
                     android:paddingEnd="5dp"
                     android:text="@string/_4"
                     android:textColor="#808080"
-                    android:textSize="12sp"
+                    android:textSize="12sp"                    android:fontFamily="@font/tajawal_medium"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/profile_image"
                     app:layout_constraintTop_toBottomOf="@id/rating" />
@@ -638,8 +653,9 @@
                         android:layout_marginEnd="5dp"
                         android:text="@string/similar_products"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/tajawal_medium"
+
                         android:textSize="16sp"
-                        android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@id/similar_image"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -650,8 +666,9 @@
                         android:drawableTint="#D20653"
                         android:text="@string/show_all"
                         android:textColor="#E91E63"
+                        android:fontFamily="@font/tajawal_bold"
+
                         android:textSize="14sp"
-                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -708,6 +725,7 @@
                 android:text="القيمة الحالية للمزاد"
                 android:textColor="@color/black"
                 android:textSize="14sp"
+                android:fontFamily="@font/tajawal_medium"
 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -718,9 +736,10 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="200 $"
+                android:fontFamily="@font/tajawal_extra_bold"
+
                 android:textColor="@color/black"
                 android:textSize="22sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/tv_current_val"
                 app:layout_constraintStart_toStartOf="@id/tv_current_val"
                 app:layout_constraintTop_toBottomOf="@id/tv_current_val" />
@@ -750,6 +769,8 @@
                         android:background="@null"
                         android:hint="اكتب المبلغ"
                         android:paddingEnd="15dp"
+                        android:fontFamily="@font/tajawal_regular"
+
                         android:textColorHint="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>

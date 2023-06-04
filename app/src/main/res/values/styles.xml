@@ -7,4 +7,42 @@
     </style>
 
 
+    <style name="tajawal_black">
+        <item name="android:fontFamily">@font/tajawal_black</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="tajawal_bold">
+        <item name="android:fontFamily">@font/tajawal_bold</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="tajawal_extra_bold">
+        <item name="android:fontFamily">@font/tajawal_extra_bold</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+    <style name="tajawal_extra_light">
+        <item name="android:fontFamily">@font/tajawal_extra_light</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+    <style name="tajawal_light">
+        <item name="android:fontFamily">@font/tajawal_light</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+    <style name="tajawal_medium">
+        <item name="android:fontFamily">@font/tajawal_medium</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="tajawal_regular">
+        <item name="android:fontFamily">@font/tajawal_regular</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
 </resources>

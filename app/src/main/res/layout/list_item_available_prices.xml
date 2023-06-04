@@ -15,7 +15,7 @@
         android:text="@string/_10000"
         android:textColor="@color/white"
         android:textSize="15sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/tajawal_regular"
 
         />
 
