@@ -1,0 +1,39 @@
+{
+  "code": 200,
+  "msg": "get Parent Cats with children",
+  "data": {
+    "categories": [
+    ],
+    "statistics": {
+      "auctions": 68,
+      "users": 132,
+      "products": 8
+    },
+    "ads_banners": [
+      {
+        "img": "https://mazaady-test.s3.us-east-2.amazonaws.com/sliders/original/1677394698.jpg",
+        "media_type": "image",
+        "duration": 5
+      },
+      {
+        "img": "https://mazaady-test.s3.us-east-2.amazonaws.com/sliders/original/1683714655.png",
+        "media_type": "image",
+        "duration": 5
+      },
+      {
+        "img": "https://mazaady-test.s3.us-east-2.amazonaws.com/sliders/original/HCceJxIyXi78djuGR2AKIPBWDCNeBVLwTEyfappt.png",
+        "media_type": "image",
+        "duration": 5
+      },
+      {
+        "img": "https://mazaady-test.s3.us-east-2.amazonaws.com/sliders/original/zvLj1asZyBanl4EsOsVY6nC3XluV3vatsPolalDD.png",
+        "media_type": "image",
+        "duration": 5
+      }
+    ],
+    "ios_version": "1.1.8",
+    "ios_latest_version": "1.1.9",
+    "google_version": "7392",
+    "huawei_version": "7392"
+  }
+}

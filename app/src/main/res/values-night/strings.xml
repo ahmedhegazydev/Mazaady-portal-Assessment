@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit">Submit</string>
+    <string name="mazad_start_after">المزاد يبدا بعد</string>
+    <string name="min_hour_day">دقيقه ساعه يوم</string>
+    <string name="with_date">بتاريخ</string>
+    <string name="mazad_name">اسم المزاد</string>
+    <string name="mazad_details">تفاصيل المزاد</string>
+    <string name="mazad_raring">تقييم المزاد</string>
+    <string name="immediate_buy_price">سعر الشراء الفوري</string>
+    <string name="buy_now">شراء الان</string>
+    <string name="get_back">انسحاب</string>
+    <string name="the_bidders">المزايدون</string>
+    <string name="show_more">عرض الكل</string>
+    <string name="the_seller">البائع</string>
+    <string name="bidder_name">اسم المزايد</string>
+    <string name="current_valur_for_mazaad">القيمه الحاليه للمزاد</string>
+    <string name="direct_mazaad">مزاد مباشر</string>
+    <string name="start_after">يبدأ بعد</string>
+    <string name="min_hr_d">د س يوم</string>
+    <string name="mazaad_beginning">بداية المزاد</string>
+    <string name="sar">ريال</string>
+</resources>

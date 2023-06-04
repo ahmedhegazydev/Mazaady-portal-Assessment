@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sub_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include
+            android:id="@+id/til"
+            layout="@layout/layout_edit_shared_item" />
+
+        <include
+            android:id="@+id/view_clickable"
+            layout="@layout/layout_view_clickable_til" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_sepcify_here"
+        style="@style/CustomTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp"
+        android:hint="@string/specify_here"
+        android:visibility="gone"
+        android:tag="specifyTil"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_specify_here"
+            android:layout_width="match_parent"
+            android:tag="specifyEdiText"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/brandsContainer"
+        android:tag="brandsContainer"
+
+        >
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+    

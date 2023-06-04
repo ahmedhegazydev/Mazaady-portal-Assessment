@@ -1,0 +1,1186 @@
+{
+  "code": 200,
+  "msg": "getProps",
+  "data": [
+    {
+      "id": 1,
+      "name": "نوع العملية",
+      "description": "",
+      "slug": "process-type",
+      "parent": null,
+      "list": false,
+      "type": null,
+      "value": "",
+      "other_value": null,
+      "options": [
+        {
+          "id": 1,
+          "name": "بيع",
+          "slug": "sell",
+          "parent": 1,
+          "child": false
+        },
+        {
+          "id": 3,
+          "name": "تأجير",
+          "slug": "rent",
+          "parent": 1,
+          "child": false
+        },
+        {
+          "id": 50875,
+          "name": "تنازل",
+          "slug": "waiver",
+          "parent": 1,
+          "child": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ماركة",
+      "description": "",
+      "slug": "brand",
+      "parent": null,
+      "list": false,
+      "type": null,
+      "value": "",
+      "other_value": null,
+      "options": [
+        {
+          "id": 51456,
+          "name": "ABARTH",
+          "slug": "abarth",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 50,
+          "name": "أكورا",
+          "slug": "acura",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51465,
+          "name": "AIXAM",
+          "slug": "aixam",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51,
+          "name": "الفا روميو",
+          "slug": "alfa-romeo",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 73,
+          "name": "أناضول",
+          "slug": "anadol",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51458,
+          "name": "ARASH",
+          "slug": "arash",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 52,
+          "name": "استون مارتن",
+          "slug": "aston-martin",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 53,
+          "name": "أودي",
+          "slug": "audi",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 54,
+          "name": "بنتلي",
+          "slug": "bentley",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 55,
+          "name": "بي إم دبليو",
+          "slug": "bmw",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 37,
+          "name": "بونتياك",
+          "slug": "bontiac",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51446,
+          "name": "بوجاتي",
+          "slug": "bugatti",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 56,
+          "name": "بويك",
+          "slug": "buick",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51443,
+          "name": "BYD",
+          "slug": "byd",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 57,
+          "name": "كاديلاك",
+          "slug": "cadillac",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51459,
+          "name": "تشانجان",
+          "slug": "changan",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 61,
+          "name": "شيري",
+          "slug": "chery",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 58,
+          "name": "شيفروليه",
+          "slug": "chevrolet",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51450,
+          "name": "كرايسلر",
+          "slug": "chrysler",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 59,
+          "name": "سيتروين",
+          "slug": "citroen",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 63,
+          "name": "داسيا",
+          "slug": "dacia",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 62,
+          "name": "دايو",
+          "slug": "daewoo",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 64,
+          "name": "دايهاتسو",
+          "slug": "daihatsu",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 4,
+          "name": "دودج",
+          "slug": "dodge",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 65,
+          "name": "DS AUTOMOBILES",
+          "slug": "ds-automobiles",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51442,
+          "name": "فاو",
+          "slug": "faw",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 6,
+          "name": "فيراري",
+          "slug": "ferrari",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 7,
+          "name": "فيات",
+          "slug": "fiat",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51453,
+          "name": "فيسكر",
+          "slug": "fisker",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 8,
+          "name": "فورد",
+          "slug": "ford",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51438,
+          "name": "فوتون",
+          "slug": "foton",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51457,
+          "name": "GAC",
+          "slug": "gac",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 60,
+          "name": "جيلي",
+          "slug": "geely",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 9,
+          "name": "جي ام سي",
+          "slug": "gmc",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51444,
+          "name": "جريت وول",
+          "slug": "great-wall",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51439,
+          "name": "هافال",
+          "slug": "haval",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 10,
+          "name": "هوندا",
+          "slug": "honda",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51437,
+          "name": "HONGQI",
+          "slug": "hongqi",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 11,
+          "name": "همر",
+          "slug": "hummer",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 12,
+          "name": "هيونداي",
+          "slug": "hyundai",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 68,
+          "name": "IKCO",
+          "slug": "ikco",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 13,
+          "name": "إنفينيتي",
+          "slug": "infiniti",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 14,
+          "name": "ايسوزو",
+          "slug": "isuzu",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51435,
+          "name": "جاك",
+          "slug": "jac",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 15,
+          "name": "جاكوار",
+          "slug": "jaguar",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 16,
+          "name": "جيب",
+          "slug": "jeep",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51440,
+          "name": "جيتور",
+          "slug": "jetour",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51441,
+          "name": "JMC",
+          "slug": "jmc",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51449,
+          "name": "كارما",
+          "slug": "karma",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 17,
+          "name": "كيا",
+          "slug": "kia",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51447,
+          "name": "كوينيجسيج",
+          "slug": "koenigsegg",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 66,
+          "name": "لادا",
+          "slug": "lada",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 18,
+          "name": "لامبورغيني",
+          "slug": "lamborghini",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 69,
+          "name": "لانسيا",
+          "slug": "lancia",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 19,
+          "name": "لاند روفر",
+          "slug": "land-rover",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 20,
+          "name": "لكزس",
+          "slug": "lexus",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51466,
+          "name": "لايجر",
+          "slug": "ligier",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 21,
+          "name": "لينكولن",
+          "slug": "lincoln",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 22,
+          "name": "لوتس",
+          "slug": "lotus",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51454,
+          "name": "لوسيد",
+          "slug": "lucid",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51452,
+          "name": "ماك",
+          "slug": "mack",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 23,
+          "name": "مازيراتي",
+          "slug": "maserati",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51436,
+          "name": "ماكسوس",
+          "slug": "maxus",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 24,
+          "name": "مايباخ",
+          "slug": "maybach",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 25,
+          "name": "مازدا",
+          "slug": "mazda",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51463,
+          "name": "مازانتي",
+          "slug": "mazzanti",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 26,
+          "name": "ماكلارين",
+          "slug": "mclaren",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 27,
+          "name": "مرسيدس بنز",
+          "slug": "mercedes-benz",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 28,
+          "name": "ميركوري",
+          "slug": "mercury",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 29,
+          "name": "MG",
+          "slug": "mg",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 30,
+          "name": "ميني كوبر",
+          "slug": "mini-cooper",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 31,
+          "name": "ميتسوبيشي",
+          "slug": "mitsubishi",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 32,
+          "name": "نيسان",
+          "slug": "nissan",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 33,
+          "name": "أولدزموبيل",
+          "slug": "oldsmobile",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 34,
+          "name": "أوبل",
+          "slug": "opel",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51448,
+          "name": "باجاني",
+          "slug": "pagani",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51460,
+          "name": "بيرودوا",
+          "slug": "perodua",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 35,
+          "name": "بيجو",
+          "slug": "peugeot",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 36,
+          "name": "بلايموث",
+          "slug": "plymouth",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 38,
+          "name": "بورش",
+          "slug": "porsche",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 70,
+          "name": "بروتون",
+          "slug": "proton",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 39,
+          "name": "رينج روفر",
+          "slug": "range-rover",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 40,
+          "name": "رينو",
+          "slug": "renault",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51461,
+          "name": "ريزفاني",
+          "slug": "rezvani",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51469,
+          "name": "Roewe",
+          "slug": "roewe",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 41,
+          "name": "رولزرويس",
+          "slug": "rolls-royce",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 42,
+          "name": "ساب",
+          "slug": "saab",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51455,
+          "name": "سالين",
+          "slug": "saleen",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51451,
+          "name": "SCION",
+          "slug": "scion",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51434,
+          "name": "سيات",
+          "slug": "seat",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51433,
+          "name": "سكودا",
+          "slug": "skoda",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 43,
+          "name": "سمارت",
+          "slug": "smart-car",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51432,
+          "name": "سانج يونج",
+          "slug": "ssangyong",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 44,
+          "name": "سوبارو",
+          "slug": "subaru",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 45,
+          "name": "سوزوكي",
+          "slug": "suzuki",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 71,
+          "name": "تاتا",
+          "slug": "tata",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 46,
+          "name": "تسلا",
+          "slug": "tesla",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 72,
+          "name": "توفاس",
+          "slug": "tofas",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 47,
+          "name": "تويوتا",
+          "slug": "toyota",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51462,
+          "name": "تريون",
+          "slug": "trion",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51467,
+          "name": "UAZ",
+          "slug": "uaz",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51468,
+          "name": "فينوسيا",
+          "slug": "venucia",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 48,
+          "name": "فولكس واجن",
+          "slug": "volkswagen",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 49,
+          "name": "فولفو",
+          "slug": "volvo",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51464,
+          "name": "XIAOPENG",
+          "slug": "xiaopeng",
+          "parent": 2,
+          "child": true
+        },
+        {
+          "id": 51445,
+          "name": "زينفو",
+          "slug": "zenvo",
+          "parent": 2,
+          "child": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "نوع الجير",
+      "description": "",
+      "slug": "transmission-type",
+      "parent": null,
+      "list": false,
+      "type": null,
+      "value": "",
+      "other_value": null,
+      "options": [
+        {
+          "id": 75,
+          "name": "اتوماتيك",
+          "slug": "automatic",
+          "parent": 6,
+          "child": false
+        },
+        {
+          "id": 76,
+          "name": "عادي",
+          "slug": "manual",
+          "parent": 6,
+          "child": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "نوع الوقود",
+      "description": "",
+      "slug": "fuel-type",
+      "parent": null,
+      "list": false,
+      "type": null,
+      "value": "",
+      "other_value": null,
+      "options": [
+        {
+          "id": 78,
+          "name": "ديزل",
+          "slug": "diesel",
+          "parent": 7,
+          "child": false
+        },
+        {
+          "id": 79,
+          "name": "كهرباء",
+          "slug": "electric",
+          "parent": 7,
+          "child": false
+        },
+        {
+          "id": 81,
+          "name": "غاز",
+          "slug": "gas",
+          "parent": 7,
+          "child": false
+        },
+        {
+          "id": 77,
+          "name": "بنزين",
+          "slug": "gasoline",
+          "parent": 7,
+          "child": false
+        },
+        {
+          "id": 80,
+          "name": "هايبرد",
+          "slug": "hybrid",
+          "parent": 7,
+          "child": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "الحالة",
+      "description": "",
+      "slug": "condition",
+      "parent": null,
+      "list": false,
+      "type": null,
+      "value": "",
+      "other_value": null,
+      "options": [
+        {
+          "id": 82,
+          "name": "جديد",
+          "slug": "new",
+          "parent": 8,
+          "child": false
+        },
+        {
+          "id": 83,
+          "name": "مستعمل",
+          "slug": "used",
+          "parent": 8,
+          "child": false
+        },
+        {
+          "id": 86,
+          "name": "مصدوم",
+          "slug": "damaged",
+          "parent": 8,
+          "child": false
+        },
+        {
+          "id": 85,
+          "name": "معطل",
+          "slug": "non-operational",
+          "parent": 8,
+          "child": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "اللون",
+      "description": "",
+      "slug": "color",
+      "parent": null,
+      "list": false,
+      "type": null,
+      "value": "",
+      "other_value": null,
+      "options": [
+        {
+          "id": 894,
+          "name": "أسود",
+          "slug": "black",
+          "parent": 9,
+          "child": false
+        },
+        {
+          "id": 897,
+          "name": "أزرق",
+          "slug": "blue",
+          "parent": 9,
+          "child": false
+        },
+        {
+          "id": 901,
+          "name": "بني",
+          "slug": "brown",
+          "parent": 9,
+          "child": false
+        },
+        {
+          "id": 903,
+          "name": "ذهبي",
+          "slug": "golden",
+          "parent": 9,
+          "child": false
+        },
+        {
+          "id": 898,
+          "name": "أخضر",
+          "slug": "green",
+          "parent": 9,
+          "child": false
+        },
+        {
+          "id": 895,
+          "name": "رمادي",
+          "slug": "grey",
+          "parent": 9,
+          "child": false
+        },
+        {
+          "id": 50859,
+          "name": "عسلي",
+          "slug": "hazel",
+          "parent": 9,
+          "child": false
+        },
+        {
+          "id": 902,
+          "name": "برتقالي",
+          "slug": "orange",
+          "parent": 9,
+          "child": false
+        },
+        {
+          "id": 896,
+          "name": "أحمر",
+          "slug": "red",
+          "parent": 9,
+          "child": false
+        },
+        {
+          "id": 900,
+          "name": "فضي",
+          "slug": "silver",
+          "parent": 9,
+          "child": false
+        },
+        {
+          "id": 893,
+          "name": "أبيض",
+          "slug": "white",
+          "parent": 9,
+          "child": false
+        },
+        {
+          "id": 899,
+          "name": "أصفر",
+          "slug": "yellow",
+          "parent": 9,
+          "child": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "العداد",
+      "description": "",
+      "slug": "odometer",
+      "parent": null,
+      "list": false,
+      "type": null,
+      "value": "",
+      "other_value": null,
+      "options": []
+    },
+    {
+      "id": 11,
+      "name": "الوحدة للعداد",
+      "description": "",
+      "slug": "odometer-unit",
+      "parent": null,
+      "list": false,
+      "type": null,
+      "value": "",
+      "other_value": null,
+      "options": [
+        {
+          "id": 87,
+          "name": "كم",
+          "slug": "km",
+          "parent": 11,
+          "child": false
+        },
+        {
+          "id": 88,
+          "name": "ميل",
+          "slug": "mile",
+          "parent": 11,
+          "child": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "عدد السليندر",
+      "description": "",
+      "slug": "cylinders",
+      "parent": null,
+      "list": false,
+      "type": null,
+      "value": "",
+      "other_value": null,
+      "options": [
+        {
+          "id": 904,
+          "name": "1",
+          "slug": "1",
+          "parent": 12,
+          "child": false
+        },
+        {
+          "id": 911,
+          "name": "10",
+          "slug": "10",
+          "parent": 12,
+          "child": false
+        },
+        {
+          "id": 912,
+          "name": "12",
+          "slug": "12",
+          "parent": 12,
+          "child": false
+        },
+        {
+          "id": 905,
+          "name": "2",
+          "slug": "2",
+          "parent": 12,
+          "child": false
+        },
+        {
+          "id": 906,
+          "name": "3",
+          "slug": "3",
+          "parent": 12,
+          "child": false
+        },
+        {
+          "id": 907,
+          "name": "4",
+          "slug": "4",
+          "parent": 12,
+          "child": false
+        },
+        {
+          "id": 908,
+          "name": "5",
+          "slug": "5",
+          "parent": 12,
+          "child": false
+        },
+        {
+          "id": 909,
+          "name": "6",
+          "slug": "6",
+          "parent": 12,
+          "child": false
+        },
+        {
+          "id": 910,
+          "name": "8",
+          "slug": "8",
+          "parent": 12,
+          "child": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "نوع القيادة",
+      "description": "",
+      "slug": "drive",
+      "parent": null,
+      "list": false,
+      "type": null,
+      "value": "",
+      "other_value": null,
+      "options": [
+        {
+          "id": 90,
+          "name": "عادي",
+          "slug": "2wd",
+          "parent": 13,
+          "child": false
+        },
+        {
+          "id": 89,
+          "name": "دبل",
+          "slug": "4wd",
+          "parent": 13,
+          "child": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "رقم الهيكل",
+      "description": "",
+      "slug": "vin",
+      "parent": null,
+      "list": false,
+      "type": null,
+      "value": "",
+      "other_value": null,
+      "options": []
+    },
+    {
+      "id": 16,
+      "name": "سنة الصنع",
+      "description": "",
+      "slug": "year",
+      "parent": null,
+      "list": false,
+      "type": "date",
+      "value": "",
+      "other_value": null,
+      "options": []
+    },
+    {
+      "id": 505,
+      "name": "بلد المنشأ",
+      "description": "",
+      "slug": "country-made",
+      "parent": null,
+      "list": false,
+      "type": "country",
+      "value": "",
+      "other_value": null,
+      "options": []
+    }
+  ]
+}

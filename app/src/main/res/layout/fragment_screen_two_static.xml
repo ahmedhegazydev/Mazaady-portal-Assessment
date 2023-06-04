@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="3"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/list_item_image_gallery" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#9C000000">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_video_duration_background"
+                        android:paddingStart="7dp"
+                        android:paddingTop="5dp"
+                        android:paddingEnd="7dp"
+                        android:paddingBottom="3dp"
+                        android:text="@string/_02_20_m"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/baseline_play_circle_outline_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <me.relex.circleindicator.CircleIndicator2
+                        android:id="@+id/indicator"
+                        android:layout_marginBottom="30dp"
+                        android:layout_width="match_parent"
+                        app:ci_gravity="center"
+                        app:ci_orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_height="48dp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="#75000000"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/baseline_keyboard_arrow_right_24" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/baseline_grid_view_24" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/baseline_favorite_border_24" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/baseline_date_range_24" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/baseline_flag_24" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/baseline_share_24" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="-45dp"
+                android:layout_marginEnd="50dp"
+                android:elevation="1dp"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/start_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/start_date"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_start_after"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mazad_start_after"
+                            android:textColor="#808080"
+                            android:textSize="12sp"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_start_mins"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_31_22_55"
+                            android:textColor="#FDBC01"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_start_after" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/min_hour_day"
+                            android:textColor="#FDBC01"
+                            android:textSize="12sp"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_start_mins" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/start_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/start_time"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/tv_start_with_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/with_date"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_date_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_26_11_2022"
+                            android:textColor="#44215D"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_start_with_date" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_13_59_00"
+                            android:textColor="#44215D"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_date_time" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp">
+
+                    <TextView
+                        android:id="@+id/mazad_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mazad_name"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/baseline_keyboard_arrow_left_24"
+                        android:drawableTint="#D20653"
+                        android:text="@string/mazad_details"
+                        android:textColor="#E91E63"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/code_1234"
+                        android:textColor="#808080"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mazad_name" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include layout="@layout/item_simple_rating_bar" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/baseline_keyboard_arrow_left_24"
+                        android:drawableTint="#D20653"
+                        android:text="@string/mazad_raring"
+                        android:textColor="#E91E63"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_current_values"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_current_value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/gradient_bg_buy_now_container">
+
+                    <TextView
+                        android:id="@+id/tv_immdeiate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/immediate_buy_price"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/_200"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_immdeiate" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:paddingTop="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <TextView
+                            android:id="@+id/btn_buy_now"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/bg_buy_now"
+                            android:padding="15dp"
+                            android:text="@string/buy_now"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/btn_back" />
+
+                        <TextView
+                            android:id="@+id/btn_back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/bg_buy_get_back_btn"
+                            android:padding="15dp"
+                            android:text="@string/get_back"
+
+                            android:textColor="#E91E63"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/bidders"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/bidders"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/the_bidders"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/bidders"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/baseline_keyboard_arrow_left_24"
+                        android:drawableTint="#D20653"
+                        android:text="@string/show_more"
+                        android:textColor="#E91E63"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_bidders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/list_item_bidders" />
+
+
+            </LinearLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#FFF2CA"
+                android:padding="14dp">
+
+                <ImageView
+                    android:id="@+id/image_seller"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/boy"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/the_seller"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/image_seller"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/car"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/image_seller" />
+
+                <TextView
+                    android:id="@+id/persone_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/bidder_name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/profile_image"
+                    app:layout_constraintTop_toTopOf="@id/profile_image" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="5dp"
+                    android:text="@string/_13_59_00"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/profile_image"
+                    app:layout_constraintTop_toBottomOf="@id/persone_name" />
+
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rating"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/profile_image"
+                    app:layout_constraintTop_toBottomOf="@id/time"
+                    layout="@layout/item_simple_rating_bar" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="5dp"
+                    android:text="@string/_4"
+                    android:textColor="#808080"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/profile_image"
+                    app:layout_constraintTop_toBottomOf="@id/rating" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rounded_heart_image_bg"
+                    android:padding="8dp"
+                    android:src="@drawable/baseline_favorite_border_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp">
+
+                    <ImageView
+                        android:id="@+id/similar_image"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/box"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/similar_products"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/similar_image"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/baseline_keyboard_arrow_left_24"
+                        android:drawableTint="#D20653"
+                        android:text="@string/show_all"
+                        android:textColor="#E91E63"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_similar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/list_item_similar_products" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_available_prices"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="3"
+                tools:listitem="@layout/list_item_available_prices" />
+
+
+            <TextView
+                android:id="@+id/tv_current_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="القيمة الحالية للمزاد"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="200 $"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/tv_current_val"
+                app:layout_constraintStart_toStartOf="@id/tv_current_val"
+                app:layout_constraintTop_toBottomOf="@id/tv_current_val" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_price"
+
+                >
+
+                <LinearLayout
+                    android:id="@+id/ll_price"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/rounded_et_bg_enter_price"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/image_send">
+
+                    <EditText
+                        android:id="@+id/et_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:hint="اكتب المبلغ"
+                        android:paddingEnd="15dp"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/image_send"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="5dp"
+                    android:backgroundTint="#C40042"
+                    android:rotation="180"
+                    android:src="@drawable/baseline_send_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/ll_price"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#C40042" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

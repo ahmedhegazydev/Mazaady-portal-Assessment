@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/screenOneAddProduct">
+
+    <fragment
+        android:id="@+id/screenOneAddProduct"
+        android:name="com.mazaady.portal.ui.list.ScreenOneAllCatsListFragment"
+        tools:layout="@layout/fragment_screen_one_categories" >
+    </fragment>
+    <fragment
+        android:id="@+id/screenTwoStaticUi"
+        android:name="com.mazaady.portal.ui.static_screen.ScreenTwoStaticFragment"
+        tools:layout="@layout/fragment_screen_two_static" >
+    </fragment>
+</navigation>

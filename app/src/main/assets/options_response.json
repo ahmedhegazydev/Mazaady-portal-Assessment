@@ -1,0 +1,103 @@
+{
+  "code": 200,
+  "msg": "option child",
+  "data": [
+    {
+      "id": 647,
+      "name": "موديل",
+      "description": null,
+      "slug": "model",
+      "parent": 55,
+      "list": false,
+      "type": null,
+      "value": "",
+      "other_value": null,
+      "options": [
+        {
+          "id": 38288,
+          "name": "الفئة الأولى",
+          "slug": "series-1",
+          "parent": 647,
+          "child": true
+        },
+        {
+          "id": 38289,
+          "name": "الفئة الثانية",
+          "slug": "series-2",
+          "parent": 647,
+          "child": true
+        },
+        {
+          "id": 38290,
+          "name": "الفئة الثالثة",
+          "slug": "series-3",
+          "parent": 647,
+          "child": true
+        },
+        {
+          "id": 38291,
+          "name": "الفئة الرابعة",
+          "slug": "series-4",
+          "parent": 647,
+          "child": true
+        },
+        {
+          "id": 38292,
+          "name": "الفئة الخامسة",
+          "slug": "series-5",
+          "parent": 647,
+          "child": true
+        },
+        {
+          "id": 38293,
+          "name": "الفئة السادسة",
+          "slug": "series-6",
+          "parent": 647,
+          "child": true
+        },
+        {
+          "id": 38294,
+          "name": "الفئة السابعة",
+          "slug": "series-7",
+          "parent": 647,
+          "child": true
+        },
+        {
+          "id": 38295,
+          "name": "الفئة الثامنة",
+          "slug": "series-8",
+          "parent": 647,
+          "child": true
+        },
+        {
+          "id": 51379,
+          "name": "الفئة I",
+          "slug": "series-i",
+          "parent": 647,
+          "child": true
+        },
+        {
+          "id": 51377,
+          "name": "الفئة M",
+          "slug": "series-m",
+          "parent": 647,
+          "child": true
+        },
+        {
+          "id": 51376,
+          "name": "الفئة X",
+          "slug": "series-x",
+          "parent": 647,
+          "child": true
+        },
+        {
+          "id": 51378,
+          "name": "الفئة Z",
+          "slug": "series-z",
+          "parent": 647,
+          "child": true
+        }
+      ]
+    }
+  ]
+}
