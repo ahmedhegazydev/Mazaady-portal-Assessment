@@ -18,12 +18,12 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputLayout
-import com.mazaady.portal.databinding.FragmentScreenOneCategoriesBinding
 import com.mazaady.portal.R
 import com.mazaady.portal.data.model.Children
-import com.mazaady.portal.data.model.screen1.MainCategoryItem
 import com.mazaady.portal.data.model.Options
+import com.mazaady.portal.data.model.screen1.MainCategoryItem
 import com.mazaady.portal.data.model.screen1.SubCategoryItem
+import com.mazaady.portal.databinding.FragmentScreenOneCategoriesBinding
 import com.mazaady.portal.state.NetworkState
 import com.mazaady.portal.ui.adapter.screen1.PropertiesAdapter
 import com.mazaady.portal.ui.sheet.Callback
@@ -48,9 +48,14 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
 
     private val viewModelCategories: ShowALlMainCategoriesListViewModel by viewModels()
     private lateinit var propertiesAdapter: PropertiesAdapter
-    var dataSubCategories: MutableList<Children> = mutableListOf()
-    var categoryList: MutableList<MainCategoryItem> = mutableListOf()
-    var isLoading = false
+
+
+    private var dataSubCategories: MutableList<Children> = mutableListOf()
+    private var categoryList: MutableList<MainCategoryItem> = mutableListOf()
+    private var dataSubCategoriesOld: MutableList<Children> = mutableListOf()
+    private var categoryListOld: MutableList<MainCategoryItem> = mutableListOf()
+
+    private var isLoading = false
     private lateinit var binding: FragmentScreenOneCategoriesBinding
     private var editTextMainCat: EditText? = null
     private var editTextSubCat: EditText? = null
@@ -60,6 +65,7 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
     private lateinit var selectedSubCat: Children
     private var selectedProperties = mutableListOf<SubCategoryItem>()
     private var selectedOptions = mutableListOf<Options>()
+
     /* The above code is defining a global variable `globalCallback` which is an implementation of the
     `Callback` interface. The `Callback` interface has a single function `invoke` which takes an
     argument of type `Any`. The `invoke` function is overridden in the implementation of
@@ -83,7 +89,12 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
                             disableShipping = it.disableShipping
                         })
                     }
+                    sheetSubCategories = initBottomSheetForSubCategories()
                     showSubCategoriesBottomSheet()
+                    if (dataSubCategories != dataSubCategoriesOld) {
+                        sheetSubCategories = null
+                    }
+                    dataSubCategoriesOld = dataSubCategories
                 }
                 is Children -> {
                     selectedSubCat = selectedItem
@@ -95,7 +106,8 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
 
     }
     val hashMapParentIdsAndOptions: HashMap<String, Options> = HashMap()
-
+    private var sheetMainCategories: MyBottomSheetDialogFragment? = null
+    private var sheetSubCategories: MyBottomSheetDialogFragment? = null
 
     /**
      * This function inflates a layout for a fragment and returns its root view.
@@ -136,6 +148,8 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        sheetMainCategories = initBottomSheetForMainCategories()
+
         setupObservers()
 
         setupUI()
@@ -150,7 +164,6 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
      * The function displays a table of all selected data in a custom dialog.
      */
     private fun showAllSelectedDataAsTable() {
-
         for (i in 0 until recyclerViewProperties.childCount) {
             val childView: View = recyclerViewProperties.getChildAt(i)
             val specifyTil: TextInputLayout = childView.findViewById(R.id.til_sepcify_here)
@@ -239,8 +252,7 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
             stringBuilder.append("|-------------------------\n")
         }
 
-        val stringResult = stringBuilder.toString()
-        return stringResult
+        return stringBuilder.toString()
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -269,17 +281,55 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
         }
 
         binding.viewMainCat.root.findViewById<View>(R.id.view_clickable).setOnClickListener {
-            val bottomSheetDialogFragment =
-                MyBottomSheetDialogFragment.newInstance(ARG_LIST_KEY_MAIN_CATEGORIES, categoryList)
-            bottomSheetDialogFragment.setCallback(callback = globalCallback)
-            bottomSheetDialogFragment.show(
-                childFragmentManager,
-                "MyBottomSheetDialogFragment"
-            )
+            if (sheetMainCategories == null) {
+                sheetMainCategories =
+                    MyBottomSheetDialogFragment.newInstance(
+                        ARG_LIST_KEY_MAIN_CATEGORIES,
+                        categoryList
+                    )
+                sheetMainCategories?.setCallback(callback = globalCallback)
+            }
+
+            if (sheetMainCategories?.isBottomSheetDialogVisible?.not() == true) {
+                sheetMainCategories?.show(
+                    childFragmentManager,
+                    "sheetMainCategories"
+                )
+            }
         }
         binding.viewSubCat.root.findViewById<View>(R.id.view_clickable).setOnClickListener {
             showSubCategoriesBottomSheet()
         }
+    }
+
+    /**
+     * The function initializes a bottom sheet dialog fragment for main categories with a callback.
+     *
+     * @return The function `initBottomSheetForMainCategories()` returns an instance of
+     * `MyBottomSheetDialogFragment` with a callback set to `globalCallback`.
+     */
+    private fun initBottomSheetForMainCategories(): MyBottomSheetDialogFragment? {
+        val sheetMainCategories =
+            MyBottomSheetDialogFragment.newInstance(ARG_LIST_KEY_MAIN_CATEGORIES, categoryList)
+        sheetMainCategories.setCallback(callback = globalCallback)
+        return sheetMainCategories
+    }
+
+    /**
+     * The function initializes a bottom sheet dialog fragment for subcategories with a callback
+     * function.
+     *
+     * @return The function `initBottomSheetForSubCategories()` is returning an instance of
+     * `MyBottomSheetDialogFragment` with a list of sub-categories data and a callback function set to
+     * `globalCallback`.
+     */
+    private fun initBottomSheetForSubCategories(): MyBottomSheetDialogFragment? {
+        val sheetSubCategories = MyBottomSheetDialogFragment.newInstance(
+            ARG_LIST_KEY_SUB_CATEGORIES,
+            dataSubCategories
+        )
+        sheetSubCategories.setCallback(callback = globalCallback)
+        return sheetSubCategories
     }
 
     /**
@@ -336,13 +386,19 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
      * callback for it.
      */
     private fun showSubCategoriesBottomSheet() {
-        val bottomSheetDialogFragment =
-            MyBottomSheetDialogFragment.newInstance(ARG_LIST_KEY_SUB_CATEGORIES, dataSubCategories)
-        bottomSheetDialogFragment.setCallback(callback = globalCallback)
-        bottomSheetDialogFragment.show(
-            childFragmentManager,
-            "MyBottomSheetDialogFragment"
-        )
+        if (sheetSubCategories == null) {
+            sheetSubCategories = MyBottomSheetDialogFragment.newInstance(
+                ARG_LIST_KEY_SUB_CATEGORIES,
+                dataSubCategories
+            )
+            sheetSubCategories?.setCallback(callback = globalCallback)
+        }
+        if (sheetSubCategories?.isBottomSheetDialogVisible?.not() == true) {
+            sheetSubCategories?.show(
+                childFragmentManager,
+                "sheetSubCategories"
+            )
+        }
     }
 
     /**
@@ -358,6 +414,11 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
                             hideProgressBar()
                             response.data?.let {
                                 categoryList = it.data?.categories ?: mutableListOf()
+                                if (categoryList != categoryListOld) {
+                                    sheetMainCategories = null
+                                }
+                                categoryListOld = categoryList
+
                             }
                         }
 

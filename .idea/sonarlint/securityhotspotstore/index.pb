@@ -45,8 +45,6 @@ j
 Papp/src/main/java/com/mazaady/portal/ui/adapter/screen1/MainCategoriesAdapter.kt,6/1/612286150e7c6e89d9115794611104182d713fe9
 y
 Iapp/src/main/java/com/mazaady/portal/ui/adapter/screen1/OptionsAdapter.kt,4/3/43df114acf205a60e506aa66980b3a984a1162a3
-|
-Lapp/src/main/java/com/mazaady/portal/ui/adapter/screen1/PropertiesAdapter.kt,5/a/5aebbd1bb3f3de07e6b6796c9994c72114c1d7da
 
 Oapp/src/main/java/com/mazaady/portal/ui/adapter/screen1/SubCategoriesAdapter.kt,8/f/8f7eb2cfa8b684f24aada1eeb207409b19dd0ec5
 
@@ -81,8 +79,6 @@ g
 7app/src/main/java/com/mazaady/portal/util/Extensions.kt,3/2/327765dcf96d753b76153c1b228e4b724632bee6
 v
 Fapp/src/androidTest/java/com/mazaady/portal/ExampleInstrumentedTest.kt,8/3/83957422a9d49aeb300969f0ad9c43b724b19048
-j
-:app/src/main/java/com/mazaady/portal/util/NetworkHelper.kt,6/a/6ac7bd2e81e4f820929a4c586e45400c3f1e58a3
 p
 @app/src/main/java/com/mazaady/portal/MazaadyPortalApplication.kt,9/7/975a4d79c88cfe9decc6759eaa60ddfc560c46fc
 x
@@ -95,7 +91,3 @@ Rapp/src/main/java/com/mazaady/portal/ui/list/ShowALlMainCategoriesListViewModel
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
 n
 >app/src/main/java/com/mazaady/portal/ui/MainMazaadyActivity.kt,c/3/c35cbe1ecd7d1c87c944a5e1e1b202e0802657c1
-|
-Lapp/src/main/java/com/mazaady/portal/ui/list/ScreenOneAllCatsListFragment.kt,c/4/c42b7f47d4c00e7e5b8712233e6ac3e95d11840b
-|
-Lapp/src/main/java/com/mazaady/portal/ui/sheet/MyBottomSheetDialogFragment.kt,a/1/a1ecc933ab993e4c3733ad11617e867b12e4c045

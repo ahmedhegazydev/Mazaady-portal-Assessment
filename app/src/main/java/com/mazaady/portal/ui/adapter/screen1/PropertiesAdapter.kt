@@ -28,7 +28,9 @@ class PropertiesAdapter(
     Filterable {
 
 
+    private var sheetProperties: MyBottomSheetDialogFragment? = null
     private var originalDataList: List<SubCategoryItem> = emptyList()
+    private var dataOptionsOld = mutableListOf<Options>()
     /**
      * This is a Kotlin function that returns a filter to perform filtering on a list of
      * SubCategoryItem objects based on a search query.
@@ -138,40 +140,43 @@ class PropertiesAdapter(
             binding.apply {
                 til.root.findViewById<TextInputLayout>(R.id.til).hint = dataCategories.name
                 viewClickable.root.setOnClickListener {
-
                     val position = adapterPosition
                     if (position != RecyclerView.NO_POSITION) {
-                        val bottomSheetDialogFragment =
-                            MyBottomSheetDialogFragment.newInstance(
-                                MyBottomSheetDialogFragment.ARG_LIST_KEY_PROPERTIES,
-                                dataCategories.options
-                            )
-                        val args = Bundle().apply {
-                            putString(ARG_LIST_KEY_TITLE, "Select ${dataCategories.name}")
-                        }
-                        bottomSheetDialogFragment.arguments?.apply {
-                            putAll(args)
-                        }
-                        bottomSheetDialogFragment.setCallback {
-                            when (it) {
-                                is Options -> {
-                                    til.root.findViewById<TextInputLayout>(R.id.til).editText?.setText(
-                                        it.name ?: ""
-                                    )
-                                    if (it.name == "اخر") {
-                                        tilSepcifyHere.visibility = View.VISIBLE
-                                    } else {
-                                        tilSepcifyHere.visibility = View.GONE
+                        if (sheetProperties == null || dataOptionsOld != dataCategories.options) {
+                            sheetProperties =
+                                MyBottomSheetDialogFragment.newInstance(
+                                    MyBottomSheetDialogFragment.ARG_LIST_KEY_PROPERTIES,
+                                    dataCategories.options
+                                )
+                            sheetProperties?.setCallback {
+                                when (it) {
+                                    is Options -> {
+                                        til.root.findViewById<TextInputLayout>(R.id.til).editText?.setText(
+                                            it.name ?: ""
+                                        )
+                                        if (it.name == "اخر") {
+                                            tilSepcifyHere.visibility = View.VISIBLE
+                                        } else {
+                                            tilSepcifyHere.visibility = View.GONE
+                                        }
+                                        onItemOptionsSelected?.invoke(dataCategories, it, position)
                                     }
-                                    onItemOptionsSelected?.invoke(dataCategories, it, position)
                                 }
                             }
                         }
-
-                        bottomSheetDialogFragment.show(
-                            childFragmentManager,
-                            "MyBottomSheetDialogFragment"
-                        )
+                        dataOptionsOld = dataCategories.options
+                        val args = Bundle().apply {
+                            putString(ARG_LIST_KEY_TITLE, "Select ${dataCategories.name}")
+                        }
+                        sheetProperties?.arguments?.apply {
+                            putAll(args)
+                        }
+                        if (sheetProperties?.isBottomSheetDialogVisible?.not() == true) {
+                            sheetProperties?.show(
+                                childFragmentManager,
+                                "MyBottomSheetDialogFragment"
+                            )
+                        }
                     }
                 }
 

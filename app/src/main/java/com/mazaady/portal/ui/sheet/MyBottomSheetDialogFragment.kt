@@ -1,9 +1,8 @@
 package com.mazaady.portal.ui.sheet;
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.os.Parcelable
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +14,7 @@ import com.mazaady.portal.R
 import com.mazaady.portal.data.model.Children
 import com.mazaady.portal.data.model.screen1.MainCategoryItem
 import com.mazaady.portal.data.model.Options
+import com.mazaady.portal.data.model.screen1.SubCategoryItem
 import com.mazaady.portal.ui.adapter.screen1.MainCategoriesAdapter
 import com.mazaady.portal.ui.adapter.screen1.OptionsAdapter
 import com.mazaady.portal.ui.adapter.screen1.SubCategoriesAdapter
@@ -41,6 +41,23 @@ typealias Callback = (Any) -> Unit
  * `FragmentMyBottomSheetBinding` layout.
  */
 class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
+
+    var isBottomSheetDialogVisible = false
+        private set
+
+    /**
+     * This function sets a boolean variable to false when a dialog is dismissed.
+     *
+     * @param dialog The `dialog` parameter in the `onDismiss` method is an instance of the
+     * `DialogInterface` class. It represents the dialog that was dismissed. In this case, it is a
+     * bottom sheet dialog. The `DialogInterface` class provides methods to interact with the dialog,
+     * such as dismissing it
+     */
+    override fun onDismiss(dialog: DialogInterface) {
+        super.onDismiss(dialog)
+        isBottomSheetDialogVisible = false
+    }
+
     /**
      * This function sets a callback for a given object.
      *
@@ -126,6 +143,8 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        isBottomSheetDialogVisible = true
 
         setUpUiAndSearchView()
 
