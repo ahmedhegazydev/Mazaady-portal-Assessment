@@ -6,7 +6,6 @@
     android:background="@drawable/rounded_top_corners_background"
     android:padding="20dp">
 
-
     <ImageView
         android:id="@+id/close"
         android:layout_width="30dp"
