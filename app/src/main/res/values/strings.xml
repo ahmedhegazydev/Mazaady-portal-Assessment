@@ -41,4 +41,6 @@
     <string name="mazaad_beginning">بداية المزاد</string>
     <string name="_20000">20000</string>
     <string name="sar">ريال</string>
+    <string name="title">Title</string>
+    <string name="search">Search...</string>
 </resources>
