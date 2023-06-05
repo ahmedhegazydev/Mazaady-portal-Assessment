@@ -28,8 +28,21 @@ class PropertiesAdapter(
     Filterable {
 
 
+    /* `private var sheetProperties: MyBottomSheetDialogFragment? = null` is declaring a nullable
+    variable `sheetProperties` of type `MyBottomSheetDialogFragment`. It is initialized to `null`.
+    This variable is used to hold an instance of `MyBottomSheetDialogFragment`, which is a bottom
+    sheet dialog fragment that displays a list of options for a particular item in a subcategory.
+    The variable is used to check if the bottom sheet dialog fragment has already been created or
+    not, and to show or hide the fragment accordingly. */
     private var sheetProperties: MyBottomSheetDialogFragment? = null
+    /* The above code is declaring a private mutable variable named `originalDataList` of type
+    `List<SubCategoryItem>` and initializing it with an empty list. The `List` is a collection
+    interface in Kotlin that represents an ordered collection of elements. `SubCategoryItem` is a
+    custom data class or type that is not defined in the given code snippet. */
     private var originalDataList: List<SubCategoryItem> = emptyList()
+    /* The above code is declaring a private mutable list variable named `dataOptionsOld` of type
+    `Options`. The `mutableListOf()` function is used to create an empty mutable list of `Options`
+    type and assign it to the `dataOptionsOld` variable. */
     private var dataOptionsOld = mutableListOf<Options>()
 
     /**
