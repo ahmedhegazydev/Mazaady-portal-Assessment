@@ -31,6 +31,7 @@ class PropertiesAdapter(
     private var sheetProperties: MyBottomSheetDialogFragment? = null
     private var originalDataList: List<SubCategoryItem> = emptyList()
     private var dataOptionsOld = mutableListOf<Options>()
+
     /**
      * This is a Kotlin function that returns a filter to perform filtering on a list of
      * SubCategoryItem objects based on a search query.
@@ -66,19 +67,26 @@ class PropertiesAdapter(
     }
 
     /**
-     * This function sets the original data list and submits it to be displayed.
+     * This function sets the original data list, submits it, and notifies the adapter of the changes.
      *
-     * @param dataList The parameter `dataList` is a list of `SubCategoryItem` objects that is passed
-     * as an argument to the function `setOriginalDataList()`. This function sets the
-     * `originalDataList` variable to the same list and submits it to the adapter using the
-     * `submitList()` method.
+     * @param dataList A list of SubCategoryItem objects that will be used to set the originalDataList
+     * and submitList for a RecyclerView adapter. The notifyDataSetChanged() method is called to update
+     * the UI with the new data.
      */
     fun setOriginalDataList(dataList: List<SubCategoryItem>) {
         originalDataList = dataList
         submitList(dataList)
+        notifyDataSetChanged()
     }
 
+    /* `private var onItemOptionsSelected: ((SubCategoryItem, Options, Int) -> Unit)? = null` is
+    declaring a nullable variable `onItemOptionsSelected` of type function that takes in three
+    parameters - a `SubCategoryItem` object, an `Options` object, and an integer - and returns
+    `Unit` (i.e., no return value). This variable is used to set a listener for when an option is
+    selected for a particular item in a subcategory, and the selected item, option, and index are
+    passed to the listener. If no listener is set, the variable is initialized to `null`. */
     private var onItemOptionsSelected: ((SubCategoryItem, Options, Int) -> Unit)? = null
+
     /**
      * This function sets a listener for when an item option is selected and passes the selected item,
      * option, and index to the listener.
@@ -126,8 +134,11 @@ class PropertiesAdapter(
         holder.bind(dataCategories)
     }
 
+    /* The `DataPropertiesViewHolder` class binds data to a view and sets up a click listener to
+    display a bottom sheet dialog fragment with options. */
     inner class DataPropertiesViewHolder(private val binding: LayoutOutlinedEditTextContainerBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         /**
          * The function binds data to a view and sets up a click listener to display a bottom sheet
          * dialog fragment with options.
@@ -138,7 +149,15 @@ class PropertiesAdapter(
          */
         fun bind(dataCategories: SubCategoryItem) {
             binding.apply {
-                til.root.findViewById<TextInputLayout>(R.id.til).hint = dataCategories.name
+                val tilView: TextInputLayout = binding.til.root.findViewById(R.id.til)
+                tilView.hint = "تحديد " + dataCategories.name
+                if (dataCategories.selectedOption?.trim()?.isNotEmpty() == true) {
+                    tilView.editText?.setText(
+                        dataCategories.selectedOption
+                    )
+                }else{
+                    tilView.editText?.setText("")
+                }
                 viewClickable.root.setOnClickListener {
                     val position = adapterPosition
                     if (position != RecyclerView.NO_POSITION) {
@@ -151,15 +170,23 @@ class PropertiesAdapter(
                             sheetProperties?.setCallback {
                                 when (it) {
                                     is Options -> {
-                                        til.root.findViewById<TextInputLayout>(R.id.til).editText?.setText(
-                                            it.name ?: ""
+                                        dataCategories.selectedOption = it.name
+                                        tilView.editText?.setText(
+                                            dataCategories.selectedOption
                                         )
-                                        if (it.name == "اخر") {
-                                            tilSepcifyHere.visibility = View.VISIBLE
-                                        } else {
-                                            tilSepcifyHere.visibility = View.GONE
+                                        tilSepcifyHere.visibility =
+                                            if (it.name == root.context.getString(R.string.other)) {
+                                                View.VISIBLE
+                                            } else {
+                                                View.GONE
+                                            }
+                                        if (it.name != root.context.getString(R.string.other)) {
+                                            onItemOptionsSelected?.invoke(
+                                                dataCategories,
+                                                it,
+                                                position
+                                            )
                                         }
-                                        onItemOptionsSelected?.invoke(dataCategories, it, position)
                                     }
                                 }
                             }
@@ -199,9 +226,7 @@ class PropertiesDiffCallback : DiffUtil.ItemCallback<SubCategoryItem>() {
                 oldItem.type == newItem.type &&
                 oldItem.otherValue == newItem.otherValue &&
                 oldItem.list == newItem.list &&
-                oldItem.value == newItem.value
-
-                )
+                oldItem.value == newItem.value)
     }
 
     override fun areContentsTheSame(oldItem: SubCategoryItem, newItem: SubCategoryItem): Boolean {
