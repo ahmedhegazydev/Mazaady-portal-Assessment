@@ -35,6 +35,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.custom_dialog_layout.view.*
 import kotlinx.android.synthetic.main.fragment_screen_one_categories.*
 import kotlinx.coroutines.launch
+import java.util.*
+import kotlin.collections.HashMap
+import kotlin.collections.HashSet
 
 private const val TAG = "ScreenOneCatFragment"
 
@@ -61,10 +64,12 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
     private var editTextSubCat: EditText? = null
     private var indexToAddSubList = RecyclerView.NO_POSITION
     private var currentProperties = mutableListOf<SubCategoryItem>()
+    private var tempCurrentPropertiesForReset = mutableListOf<SubCategoryItem>()
     private lateinit var selectedMainCat: MainCategoryItem
     private lateinit var selectedSubCat: Children
     private var selectedProperties = mutableListOf<SubCategoryItem>()
     private var selectedOptions = mutableListOf<Options>()
+    private var resetSubPropertiesRecyclerView = true
 
     /* The above code is defining a global variable `globalCallback` which is an implementation of the
     `Callback` interface. The `Callback` interface has a single function `invoke` which takes an
@@ -339,6 +344,15 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
     private fun setUpPropertiesRecyclerView() {
         propertiesAdapter = PropertiesAdapter(childFragmentManager)
         propertiesAdapter.setOnItemOptionSelectListener { item, option, adapterPosition ->
+
+            val isReset = tempCurrentPropertiesForReset.any { item.name?.trim().equals(it.name?.trim(), ignoreCase = true) }
+            if (isReset) {
+                currentProperties.removeAll {
+                    it.isTempForRestingRecycler == true
+                }
+                propertiesAdapter.setOriginalDataList(currentProperties)
+            }
+
             indexToAddSubList = adapterPosition
 
             viewModelCategories.getAllOptionsListShowing(option.id)
@@ -457,7 +471,6 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
                         is NetworkState.Success -> {
                             hideProgressBar()
                             response.data?.let { data ->
-                                currentProperties = data.data ?: mutableListOf()
                                 data.data?.forEach { item ->
                                     item.options.add(0, Options().apply {
                                         id = -1
@@ -468,6 +481,12 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
                                     })
                                 }
                                 propertiesAdapter.setOriginalDataList(data.data ?: mutableListOf())
+                                currentProperties = data.data ?: mutableListOf()
+
+                            }
+                            if (resetSubPropertiesRecyclerView){
+                                tempCurrentPropertiesForReset.addAll(currentProperties)
+                                resetSubPropertiesRecyclerView = false
                             }
                         }
 
@@ -505,6 +524,7 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
                                         slug = options.slug
                                         parent = options.parent.toString()
                                         this.options = options.options
+                                        isTempForRestingRecycler = true
                                     })
                                 }
                                 if (addNewOptions.isNotEmpty()) {
@@ -522,7 +542,7 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
                                     currentProperties.addAll(indexToAddSubList + 1, addNewOptions)
                                     propertiesAdapter.setOriginalDataList(currentProperties)
                                 }
-
+                                resetSubPropertiesRecyclerView = true
                             }
                         }
 

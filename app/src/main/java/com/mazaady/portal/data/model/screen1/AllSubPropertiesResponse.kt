@@ -31,28 +31,27 @@ data class AllSubPropertiesResponse(
 
 /**
  * This is a data class representing a subcategory item with various properties and options.
- * @property {Boolean?} isSelected - A Boolean variable that indicates whether the subcategory item is
+ * @property {Boolean?} isSelected - A boolean value indicating whether the subcategory item is
  * currently selected or not.
- * @property {Int?} id - The unique identifier of the subcategory item.
+ * @property {Boolean?} isTempForRestingRecycler - This property is a boolean flag that is used to
+ * indicate whether the item is temporary and should be displayed in a resting recycler view.
+ * @property {Int?} id - The ID of the subcategory item.
  * @property {String?} name - The name of the subcategory item.
  * @property {String?} description - The description of the subcategory item. It provides additional
- * information about the item and can be used to give more context to the user.
+ * information about the item.
  * @property {String?} slug - The "slug" property is a string that represents a user-friendly and
- * SEO-friendly version of the subcategory item's name. It is often used in URLs to identify the
- * subcategory item.
- * @property {String?} parent - The "parent" property in the "SubCategoryItem" data class represents
- * the parent category of the subcategory. It is a string type property.
- * @property {Boolean?} list - The "list" property is a Boolean value that indicates whether the
- * subcategory item has a list of options or not. If it is set to true, it means that the subcategory
- * item has a list of options, and the "options" property will contain a list of available options. If
- * it
- * @property {String?} type - The "type" property in the "SubCategoryItem" data class is a string that
- * represents the type of the subcategory item. It could be used to differentiate between different
- * types of subcategory items, such as "color", "size", "material", etc.
- * @property {String?} value - The value property is a String that represents the value of the
- * subcategory item. It can be used to store any relevant information about the subcategory item, such
- * as its price, size, color, or any other attribute that distinguishes it from other subcategory
- * items.
+ * SEO-friendly version of the category or subcategory name. It is often used in URLs to identify the
+ * category or subcategory.
+ * @property {String?} parent - The parent property is a String that represents the parent category of
+ * the subcategory item. It is used to organize and group subcategories under a specific category.
+ * @property {Boolean?} list - The "list" property is a Boolean value that indicates whether this
+ * subcategory item has a list of options or not. If it is true, then the "options" property will
+ * contain a list of available options for this subcategory item.
+ * @property {String?} type - The "type" property is a String that represents the type of the
+ * subcategory item. It could be used to differentiate between different types of subcategory items,
+ * such as "color", "size", "material", etc.
+ * @property {String?} value - The value property is a String that holds a value related to the
+ * SubCategoryItem.
  * @property {String?} otherValue - `otherValue` is a property of type `String` in the
  * `SubCategoryItem` data class. It is annotated with `@SerializedName("other_value")`, which means
  * that it is mapped to the JSON key "other_value" when the object is serialized or deserialized using
@@ -61,13 +60,14 @@ data class AllSubPropertiesResponse(
  * objects. It is used to store a list of options for a particular subcategory item. Each "Options"
  * object contains information about a single option, such as its name and value. This property can be
  * used to display a list of
- * @property {String?} selectedOption - This is a nullable property of type String that represents the
- * currently selected option for the subcategory item. It is used in conjunction with the "options"
- * property, which is a mutable list of "Options" objects that represent the available options for the
- * subcategory item. When an option is selected, its
+ * @property {String?} selectedOption - This property is a string that represents the currently
+ * selected option for the subcategory item. It is used in conjunction with the "options" property,
+ * which is a list of possible options for the subcategory item. When the user selects an option, the
+ * "selectedOption" property is updated to reflect their
  */
 data class SubCategoryItem(
     var isSelected: Boolean? = false,
+    var isTempForRestingRecycler: Boolean? = false,
     @SerializedName("id") var id: Int? = null,
     @SerializedName("name") var name: String? = null,
     @SerializedName("description") var description: String? = null,
