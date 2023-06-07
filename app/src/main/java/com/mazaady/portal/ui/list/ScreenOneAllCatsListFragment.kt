@@ -49,8 +49,10 @@ selected subcategory. The selected data is displayed in a table format when the 
 interactions with the UI. */
 class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categories) {
 
+    /* The above code is declaring a private property `viewModelCategories` that is an instance of the
+    `ShowALlMainCategoriesListViewModel` class. The `viewModels()` function is used to retrieve an
+    instance of the ViewModel associated with the current fragment or activity. */
     private val viewModelCategories: ShowALlMainCategoriesListViewModel by viewModels()
-    private lateinit var propertiesAdapter: PropertiesAdapter
 
 
     private var dataSubCategories: MutableList<Children> = mutableListOf()
@@ -58,18 +60,22 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
     private var dataSubCategoriesOld: MutableList<Children> = mutableListOf()
     private var categoryListOld: MutableList<MainCategoryItem> = mutableListOf()
 
-    private var isLoading = false
     private lateinit var binding: FragmentScreenOneCategoriesBinding
+    private lateinit var propertiesAdapter: PropertiesAdapter
+
     private var editTextMainCat: EditText? = null
     private var editTextSubCat: EditText? = null
+
     private var indexToAddSubList = RecyclerView.NO_POSITION
     private var currentProperties = mutableListOf<SubCategoryItem>()
     private var tempCurrentPropertiesForReset = mutableListOf<SubCategoryItem>()
-    private lateinit var selectedMainCat: MainCategoryItem
-    private lateinit var selectedSubCat: Children
     private var selectedProperties = mutableListOf<SubCategoryItem>()
     private var selectedOptions = mutableListOf<Options>()
+
+    private lateinit var selectedMainCat: MainCategoryItem
+    private lateinit var selectedSubCat: Children
     private var resetSubPropertiesRecyclerView = true
+    private var isLoading = false
 
     /* The above code is defining a global variable `globalCallback` which is an implementation of the
     `Callback` interface. The `Callback` interface has a single function `invoke` which takes an
