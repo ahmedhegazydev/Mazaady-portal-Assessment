@@ -94,8 +94,6 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
                             disableShipping = it.disableShipping
                         })
                     }
-                    sheetSubCategories = initBottomSheetForSubCategories()
-                    showSubCategoriesBottomSheet()
                     if (dataSubCategories != dataSubCategoriesOld) {
                         sheetSubCategories = null
                     }
