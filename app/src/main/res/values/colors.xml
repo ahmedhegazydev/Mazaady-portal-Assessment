@@ -9,4 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#6AFF00</color>
     <color name="day_section">#E3E3E3</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
 </resources>

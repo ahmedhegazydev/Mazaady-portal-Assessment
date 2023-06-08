@@ -9,10 +9,28 @@
         android:id="@+id/screenOneAddProduct"
         android:name="com.mazaady.portal.ui.list.ScreenOneAllCatsListFragment"
         tools:layout="@layout/fragment_screen_one_categories" >
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            android:id="@+id/action_screenOneAddProduct_to_tableViewShowSelectedFragment"
+            app:destination="@id/tableViewShowSelectedFragment" />
     </fragment>
     <fragment
         android:id="@+id/screenTwoStaticUi"
         android:name="com.mazaady.portal.ui.static_screen.ScreenTwoStaticFragment"
         tools:layout="@layout/fragment_screen_two_static" >
     </fragment>
+    <fragment
+        android:id="@+id/tableViewShowSelectedFragment"
+        android:name="com.mazaady.portal.ui.tableview.TableViewShowSelectedFragment"
+        android:label="TableViewShowSelectedFragment" >
+        <argument
+            android:name="listCategories"
+            app:argType="com.mazaady.portal.data.CollectionCatItem" />
+
+    </fragment>
+
+
 </navigation>

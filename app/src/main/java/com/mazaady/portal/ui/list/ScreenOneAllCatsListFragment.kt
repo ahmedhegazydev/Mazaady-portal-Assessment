@@ -15,10 +15,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputLayout
 import com.mazaady.portal.R
+import com.mazaady.portal.data.CollectionCatItem
 import com.mazaady.portal.data.model.Children
 import com.mazaady.portal.data.model.Options
 import com.mazaady.portal.data.model.screen1.MainCategoryItem
@@ -170,7 +172,8 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
 
     @RequiresApi(Build.VERSION_CODES.N)
     /**
-     * The function displays a table of all selected data in a custom dialog.
+     * The function shows all selected data as a table and navigates to a new screen with the selected
+     * items.
      */
     private fun showAllSelectedDataAsTable() {
         for (i in 0 until recyclerViewProperties.childCount) {
@@ -191,19 +194,18 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
         val textView = customView.textView
 
         textView.text = generateAllSelectedInfoTable()
-        val alertDialogBuilder = AlertDialog.Builder(context)
-        alertDialogBuilder.setTitle("Title")
-        alertDialogBuilder.setMessage("Message")
-        alertDialogBuilder.setView(customView)
-        alertDialogBuilder.setCancelable(true)
-        alertDialogBuilder.setPositiveButton("OK") { dialog, which ->
 
+        val listSelectedItems = CollectionCatItem().apply {
+            mainCategoryItem = selectedMainCat
+            children = selectedSubCat
+            properties = selectedProperties
+            options = selectedOptions
         }
-        alertDialogBuilder.setNegativeButton("Cancel") { dialog, which ->
-
-        }
-        val alertDialog = alertDialogBuilder.create()
-        alertDialog.show()
+        val action =
+            ScreenOneAllCatsListFragmentDirections.actionScreenOneAddProductToTableViewShowSelectedFragment(
+                listSelectedItems
+            )
+        findNavController().navigate(action)
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -215,18 +217,19 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
      * StringBuilder object and then converting it to a string.
      */
     private fun generateAllSelectedInfoTable(): String {
-        val uniqueOptions = HashSet<Options>()
-        selectedProperties.forEach { subCategoryItem ->
-            val parentId: String = subCategoryItem.id.toString() ?: return@forEach
-            val matchingOptions = hashMapParentIdsAndOptions.entries
-                .filter { it.key == parentId }
+        val u = HashSet<Options>()
+        selectedProperties.forEach { s ->
+            val p = s.id.toString() ?: return@forEach
+            val m = hashMapParentIdsAndOptions.entries
+                .filter { it.key == p }
                 .map { it.value }
-            uniqueOptions.addAll(matchingOptions)
+            u.addAll(m)
         }
         selectedOptions.clear()
-        selectedOptions.addAll(uniqueOptions)
+        selectedOptions.addAll(u)
         selectedOptions =
             selectedOptions.sortedWith(compareBy({ it.parent }, { it.id })).toMutableList()
+
 
         val stringBuilder = StringBuilder()
         stringBuilder.append("|-------------------------\n")
@@ -235,18 +238,18 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
         stringBuilder.append("    description = ${selectedMainCat.description}\n")
         stringBuilder.append("    slug = ${selectedMainCat.slug}\n")
         stringBuilder.append("|-------------------------\n")
+
         stringBuilder.append("selected SubCat:\n")
         stringBuilder.append("    name = ${selectedSubCat.name}\n")
         stringBuilder.append("    description = ${selectedSubCat.description}\n")
         stringBuilder.append("    slug = ${selectedSubCat.slug}\n")
         stringBuilder.append("|-------------------------\n")
-        stringBuilder.append("selected Properties:\n")
 
+        stringBuilder.append("selected Properties:\n")
         selectedProperties.forEachIndexed { index, subCategoryItem ->
             stringBuilder.append("|    name = ${subCategoryItem.name}\n")
             stringBuilder.append("|    description = ${subCategoryItem.description}\n")
             stringBuilder.append("|    slug = ${subCategoryItem.slug}\n")
-
             if (selectedOptions.isNotEmpty() && index <= selectedOptions.size - 1) {
                 val firstOption = selectedOptions[index]
                 stringBuilder.append("|           selected Options:\n")
@@ -349,7 +352,9 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
         propertiesAdapter = PropertiesAdapter(childFragmentManager)
         propertiesAdapter.setOnItemOptionSelectListener { item, option, adapterPosition ->
 
-            val isReset = tempCurrentPropertiesForReset.any { item.name?.trim().equals(it.name?.trim(), ignoreCase = true) }
+            val isReset = tempCurrentPropertiesForReset.any {
+                item.name?.trim().equals(it.name?.trim(), ignoreCase = true)
+            }
             if (isReset) {
                 currentProperties.removeAll {
                     it.isTempForRestingRecycler == true
@@ -488,7 +493,7 @@ class ScreenOneAllCatsListFragment : Fragment(R.layout.fragment_screen_one_categ
                                 currentProperties = data.data ?: mutableListOf()
 
                             }
-                            if (resetSubPropertiesRecyclerView){
+                            if (resetSubPropertiesRecyclerView) {
                                 tempCurrentPropertiesForReset.addAll(currentProperties)
                                 resetSubPropertiesRecyclerView = false
                             }

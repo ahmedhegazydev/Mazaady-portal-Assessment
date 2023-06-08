@@ -156,7 +156,8 @@ dependencies {
     //indicator
     implementation 'me.relex:circleindicator:2.1.6'
 
-
+    //TableView
+    implementation project(":tableview")
 }
 kapt {
     correctErrorTypes true

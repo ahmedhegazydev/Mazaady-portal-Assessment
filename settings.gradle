@@ -1,2 +1,3 @@
 rootProject.name = "Mazaady App"
 include ':app'
+include ':tableview'

@@ -44,4 +44,38 @@
     <string name="title">Title</string>
     <string name="search">Search...</string>
     <string name="other">اخر</string>
+
+
+    <string-array name="table_view_demos">
+        <item name="random_data_table_view">TableView (Basic)</item>
+        <item name="random_data_table_view_with_features">TableView (Advanced)</item>
+    </string-array>
+
+    <!-- menu -->
+    <string name="sort_ascending">Sort Ascending</string>
+    <string name="sort_descending">Sort Descending</string>
+    <string name="hide_row">Hide Row 3</string>
+    <string name="show_row">Show Row 3</string>
+    <string name="scroll_to_row_position">Scroll to Row 100</string>
+    <string name="scroll_to_column_position">Scroll to column 50</string>
+    <string name="show_hide_column">Show/Hide column 5</string>
+
+    <!-- tableview controls -->
+    <string-array name="items_per_page">
+        <item>10</item>
+        <item>20</item>
+        <item>25</item>
+        <item>50</item>
+        <item>All</item>
+    </string-array>
+    <string-array name="moods">
+        <item></item>
+        <item>Happy</item>
+        <item>Sad</item>
+    </string-array>
+    <string-array name="gender">
+        <item></item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 </resources>
